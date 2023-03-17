@@ -1,3 +1,4 @@
+
 <template>
  
     <div class="login-page">
@@ -22,8 +23,8 @@
                  <div class="spinner-border text-blue" role="status"/>
                  </div>
               <div class="button" align="center" v-else>
-                  <input type="button" value="PREVIOUS" @click="previousPage">
-                  <input type="button" value="NEXT"  @click="nextPage">
+                  <input type="button" value="PREVIOUS" @click="previousIndex">
+                  <input type="button" value="NEXT"  @click="nextIndex">
               </div>
                <div class="error" v-if="!isValid">
                   Please Enter A Valid Data
@@ -31,9 +32,8 @@
           </div>
       </div>
   </template>
-  
   <script>
-  
+  import { mapActions } from 'vuex'
   export default {
       data(){
           return{
@@ -41,16 +41,14 @@
                isValid:true,
           }
       },
-      methods:{
-
-        nextPage(){
-
-        },
-        previousPage(){
-        
-        }
+ 
+    methods:{
+        ...mapActions([
+        'nextIndex',
+        'previousIndex'
+        ]),
+      
       }
-  
   }
   </script>
   <style scoped>
