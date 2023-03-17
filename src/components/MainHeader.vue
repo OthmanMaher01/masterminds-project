@@ -18,7 +18,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s" :class="{'bg-white':!isAuthenticated}">
+    <div class="container-fluid absolute-top px-0 wow fadeIn" data-wow-delay="0.1s" :class="{'bg-white':!isAuthenticated}" style="postion:absolute">
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 text-primary m-0">Tamweelk</h1>

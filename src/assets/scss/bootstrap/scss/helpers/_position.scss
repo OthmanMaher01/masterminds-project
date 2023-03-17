@@ -1,7 +1,7 @@
 // Shorthand
 
 .fixed-top {
-  position: sticky;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -9,7 +9,7 @@
 }
 
 .fixed-bottom {
-  position: sticky;
+  position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
