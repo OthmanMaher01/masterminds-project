@@ -1,30 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <main-header/>
   <router-view/>
 </template>
-
+<script>
+import { mapGetters } from 'vuex'
+import MainHeader from '../src/components/MainHeader.vue'
+export default {
+  components:{
+    MainHeader
+  },
+  computed:{
+    ...mapGetters([
+        'isAuthenticated'
+    ])
+}
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import url('./assets/css/style.css');
+@import url('./assets/css/bootstrap.min.css');
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
