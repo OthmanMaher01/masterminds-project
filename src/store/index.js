@@ -5,14 +5,13 @@ import createPersistedState from 'vuex-persistedstate';
 const ls = new SecureLS({ isCompression: false });
 import router from '@/router';
 
-
 export default createStore({
   state: {
     isAuthenticated:false,
     access_token:"",
     user:{},
-    
-
+    isBanker:false,
+    loanComponentIndex:1
   },
   getters: {
     isAuthenticated(state){
@@ -24,6 +23,13 @@ export default createStore({
     getUser(state){
       return state.user;
     }, 
+    isBanker(state){
+      return state.isBanker;
+    },
+    getLoanComponentIndex(state){
+      return state.loanComponentIndex;
+    }, 
+    
   },
   mutations: {
     setIsAuthenticated(state,value){
@@ -35,8 +41,25 @@ export default createStore({
     setUser(state,user){
       state.user=user;
     },
+    setIsBanker(state,isBanker){
+      state.isBanker=isBanker;
+    },
+    setLoanComponentIndex(state,loanComponentIndex){
+      state.loanComponentIndex=loanComponentIndex;
+    }
   },
   actions: {
+    setIsBanker({commit},isBanker){
+      commit("setIsBanker",isBanker);
+    },
+    nextIndex({commit, getters}){
+      commit("setLoanComponentIndex",getters.getLoanComponentIndex+1);
+    },
+    previousIndex({commit, getters}){
+      if(getters.getLoanComponentIndex-1!=0){
+        commit("setLoanComponentIndex",getters.getLoanComponentIndex-1);
+      }
+    },
     async register(context,user){
       const response = await axios.post("https://8239-109-237-193-34.eu.ngrok.io/auth/register",user,{
         headers:{
