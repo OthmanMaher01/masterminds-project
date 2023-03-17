@@ -3,7 +3,6 @@ import HomePage from '../views/HomePage.vue'
 // import store from '@/store'
 import store from '@/store'
 
-
 const routes = [
 
   {
@@ -21,6 +20,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: () => import('../views/RegisterPage.vue')
+   },
+   {
+    path: '/loan',
+    name: 'loan',
+    component: () => import("../views/loan/LoanPage.vue")
    }
   // {
   //   path: '/about',
@@ -41,7 +45,7 @@ router.beforeEach((to,from,next)=>{
   console.log(to);
   console.log(store.getters.isAuthenticated)
   if(!store.getters.isAuthenticated&&to.name !== 'login'&&to.name !== 'register'&&to.name !== 'home'){
-    next({name:'login'});
+    next({name:'login'});//TODO CHANGE IT
   }
   else if(store.getters.isAuthenticated&&(to.name === 'login'||to.name === 'register')){
     next('/');
