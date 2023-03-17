@@ -3,6 +3,8 @@ import axios from 'axios';
 import SecureLS from "secure-ls";
 import createPersistedState from 'vuex-persistedstate';
 const ls = new SecureLS({ isCompression: false });
+import router from '@/router';
+
 
 export default createStore({
   state: {
@@ -56,6 +58,13 @@ export default createStore({
         throw console.error();
       }
     },
+    logout(context){
+      location.reload()
+      context.commit("setIsAuthenticated",false);
+      context.commit("setToken",null);
+      router.push('/');  
+
+  }
   },
   modules: {
   },

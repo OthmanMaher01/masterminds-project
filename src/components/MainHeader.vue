@@ -18,7 +18,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s" :class="{'bg-white':!isAuthenticated}" style="postion:absolute">
+    <div class="container-fluid static-top px-0 wow fadeIn" data-wow-delay="0.1s" :class="{'bg-white':!isAuthenticated}" style="postion:absolute">
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.html" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 text-primary m-0">Tamweelk</h1>
@@ -57,6 +57,9 @@
                     <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
                         <small class="fab fa-linkedin-in text-primary"></small>
                     </a>
+                     <button class="btn btn-light btn-md-square rounded-circle ms-3" href="" v-if="isAuthenticated" @click="logout">
+                        <large class="bi bi-box-arrow-right text-primary"></large>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -66,14 +69,19 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
  computed:{
     ...mapGetters([
         'isAuthenticated'
     ])
-}
+},
+    methods:{
+        ...mapActions([
+                  'logout'
+        ])
+    }
 }
 </script>
 
