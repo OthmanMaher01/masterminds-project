@@ -1,7 +1,7 @@
 <template>
   
    <div class="register-page">
-        <div class="signup-box">
+        <div class="signup-box animated slideInDown">
              <div class="atypon-logo">
         <!-- <img src="../assets/atypontube-logo.png" style="width:170px;"> -->
     </div>
@@ -135,7 +135,7 @@ export default {
  font-family: 'Montserrat', sans-serif;
   width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(170deg, #355EFC, #2cabef);
+    background-image: linear-gradient(170deg, #dee2fb, #2cabef);
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -151,8 +151,6 @@ export default {
 .signup-box {
     width: 400px;
     position: absolute;
-    top: 55%;
-    left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 10px;
@@ -220,11 +218,11 @@ export default {
     cursor: pointer;
     margin: 40px 0;
     color: white;
-    background-image: linear-gradient(170deg, #355EFC, #2cabef);
+        background-image: linear-gradient(170deg, #355EFC, #4cc0ff);
 }
 
 .button input:hover {
-    background-image: linear-gradient(170deg, #355EFC, #1e5877);
+      background-image: linear-gradient(170deg, #6a71a0, #2cabef);
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 .text-blue {
