@@ -1,19 +1,17 @@
 <template>
- <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="../assets/images/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="../assets/images/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
-                                    <h1 class="display-3 mb-4 animated slideInDown">What do you need</h1>
+                                    <h1 class="display-3 mb-4 animated slideInDown">Let's get started and find the perfect loan for you</h1>
                                     <div class="d-flex justify-content-evenly">
-                                                                            <router-link to="/startloan" class="btn btn-outline-primary py-3 px-5 animated slideInDown disabled">Investor</router-link>
-                                    <router-link to="/startloan" class="btn btn-outline-primary py-3 px-5 animated slideInDown " >Loans</router-link>
+                                    <router-link to="/loan" class="btn btn-primary py-3 px-5 animated slideInDown " >Start</router-link>
 
-                                    <router-link to="/startloan" class="btn btn-outline-primary py-3 px-5 animated slideInDown disabled">Expert</router-link>
                                
                                     </div>
                                     

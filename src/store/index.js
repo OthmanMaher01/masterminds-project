@@ -85,7 +85,7 @@ export default createStore({
       location.reload()
       context.commit("setIsAuthenticated",false);
       context.commit("setToken",null);
-      router.push('/');  
+      router.push({name:'home'});  
 
   }
   },

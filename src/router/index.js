@@ -26,6 +26,11 @@ const routes = [
     name: 'start',
     component: () => import('../views/StartingPage.vue')
    },
+   {
+    path: '/startloan',
+    name: 'startloan',
+    component: () => import('../views/StartLoan.vue')
+   },
   {
     path: '/loan',
     name: 'loan',
