@@ -24,7 +24,7 @@
                  </div>
               <div class="button" align="center" v-else>
                   <!-- <input type="button" value="PREVIOUS" @click="previousIndex"> -->
-                  <input type="button" value="NEXT"  @click="nextIndex">
+                  <input type="button" value="NEXT"  @click="nextPage">
               </div>
                <div class="error" v-if="!isValid">
                   Please Enter A Valid Data
