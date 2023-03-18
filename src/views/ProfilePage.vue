@@ -6,11 +6,10 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <img src="../assets/images/Husa.jpeg" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                      <h4>John Doe</h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                      <h4>Husam Hamad</h4>
+                      <p class="text-muted font-size-sm">Albeniat, Amman, Jordan</p>
                      
                     </div>
                   </div>
@@ -20,7 +19,7 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                     <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
-                    <span class="text-secondary">https://bootdey.com</span>
+                    <span class="text-secondary">https://HusamJehad.com</span>
                   </li>
                   
                 </ul>
@@ -34,7 +33,7 @@
                       <h6 class="mb-0">Full Name</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Kenneth Valdez
+                     Husam Hamad
                     </div>
                   </div>
                   <hr>
@@ -43,7 +42,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      fip@jukmuh.al
+                      Hussamhammad20@yahoo.com
                     </div>
                   </div>
                   <hr>
@@ -52,25 +51,17 @@
                       <h6 class="mb-0">Phone</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      (239) 816-9029
+                      +962797321381
                     </div>
                   </div>
                   <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      (320) 380-4539
-                    </div>
-                  </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                      Bay Area, San Francisco, CA
+                      Albeniat, Amman, Jordan
                     </div>
                   </div>
                   <hr>
@@ -92,31 +83,7 @@
 
 
               <div class="row gutters-sm">
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Dimensions</i> Status</h6>
-                          <div class="row">
-                    <div class="col-sm-5">
-                      <h6 class="mb-0">Project Description</h6>
-                    </div>
-                    <div class="col-sm-7 text-secondary">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, adipisci.
-                    </div>
-                  </div>
-
-                        <div class="row">
-                    <div class="col-sm-5">
-                      <h6 class="mb-0">Loan Estimate</h6>
-                    </div>
-                    <div class="col-sm-7 text-secondary">
-                     100k
-                    </div>
-                  </div>
-
-                    </div>
-                  </div>
-                </div>
+             
               <div class="col-sm-6 mb-3">
                   <div class="card h-100">
                     <div class="card-body">
@@ -139,6 +106,16 @@
                     </div>
                   </div>
 
+                    </div>
+                  </div>
+                  
+                </div>
+                   <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body" style="    display: flex;
+    justify-content: center;
+    align-items: center;">
+                      <h6>Pending</h6>
                     </div>
                   </div>
                 </div>
@@ -221,6 +198,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
 data(){
 
@@ -231,6 +209,11 @@ data(){
     }
 
 
+},
+computed:{
+  ...mapGetters([
+    'getUser'
+  ])
 }
 }
 </script>

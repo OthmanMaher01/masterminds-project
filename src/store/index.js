@@ -63,6 +63,16 @@ export default createStore({
         commit("setLoanComponentIndex",getters.getLoanComponentIndex-1);
       }
     },
+    async getUser({commit,getters}){
+      const response=axios.get("https://8239-109-237-193-34.eu.ngrok.io/user",{
+        headers:{
+            "ngrok-skip-browser-warning":'',
+            "Authorization":"Bearer "+getters.getToken
+        }});
+        console.log((await response).data)
+        console.log(getters.getToken)
+        commit('setUser',(await response).data);
+    },
     async register(context,user){
       const response = await axios.post("https://8239-109-237-193-34.eu.ngrok.io/auth/register",user,{
         headers:{
@@ -80,6 +90,7 @@ export default createStore({
         console.log(response)
         context.commit("setToken",response.data);
         context.commit("setUser",user);
+        context.dispatch('getUser');
       }catch(e){
         throw console.error();
       }

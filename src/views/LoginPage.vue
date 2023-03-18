@@ -2,7 +2,7 @@
 
 
   <div class="login-page ">
-        <div class="login-box  animated slideInDown">
+        <div class="login-box  animated slideInRight">
              <div class="atypon-logo">
         <!-- <img src="../assets/images/atypontube-logo.png" style="width:170px;"> -->
     </div>

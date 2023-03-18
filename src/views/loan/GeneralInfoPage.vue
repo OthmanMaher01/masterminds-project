@@ -1,7 +1,7 @@
 <template>
  
     <div class="login-page">
-          <div class="login-box"  v-if="!submitted">
+          <div class="login-box animated slideInDown"  v-if="!submitted">
                <div class="atypon-logo">
           <!-- <img src="../assets/images/atypontube-logo.png" style="width:170px;"> -->
               </div>
@@ -41,6 +41,7 @@
             </div>
           </div>
       </div>
+
   </template>
   
   <script>
@@ -82,7 +83,7 @@
                 "Authorization":"Bearer "+this.getToken.accessToken
             }});
             this.submitted=true;
-            setTimeout(()=>router.push("/"), 3000);
+            setTimeout(()=>router.push("/"), 1500);
         }
       }
   }
@@ -111,7 +112,7 @@
       font-family: 'Montserrat', sans-serif;
       width: 100%;
       min-height: 100vh;
-      background-image: linear-gradient(170deg, #355EFC, #2cabef);
+    background-image: linear-gradient(170deg, #dee2fb, #2cabef);
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-box;
@@ -137,9 +138,6 @@
       width: 800px;
       height: 500px;
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       background-color: white;
       border-radius: 10px;
       padding: 40px;
@@ -210,11 +208,11 @@
       cursor: pointer;
       margin: 40px 0;
       color: white;
-      background-image: linear-gradient(170deg, #355EFC, #2cabef);
+        background-image: linear-gradient(170deg, #355EFC, #4cc0ff);
   }
   
   .button input:hover {
-      background-image: linear-gradient(170deg, #355EFC, #1e5877);
+      background-image: linear-gradient(170deg, #6a71a0, #2cabef);
       box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   }
   .text-blue {

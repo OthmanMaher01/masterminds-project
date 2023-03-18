@@ -3,7 +3,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="../assets/images/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="../assets/images/mu.png" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -11,8 +11,8 @@
                                     <h1 class="display-3 mb-4 animated slideInDown">Let's get started and find the perfect loan for you</h1>
                                     <!-- HAMZA NOTICE ME SENPAI -->
                                     <div class="d-flex justify-content-evenly">
-                                    <router-link to="/loan" class="btn btn-primary py-3 px-5 animated slideInDown " @click="toBanker">Banker</router-link>
-                                    <router-link to="/loan" class="btn btn-outline-primary py-3 px-5 animated slideInDown " @click="toNonBanker" >Non Banker</router-link>
+                                    <router-link to="/loan" class="btn btn-primary py-3 px-5 animated slideInDown " @click="toBanker">Bank User</router-link>
+                                    <router-link to="/loan" class="btn btn-outline-primary py-3 px-5 animated slideInDown " @click="toNonBanker" >New To Bank</router-link>
 
                                
                                     </div>
