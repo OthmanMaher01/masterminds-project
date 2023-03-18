@@ -1,56 +1,89 @@
 <template>
  
     <div class="login-page">
-          <div class="login-box">
+          <div class="login-box"  v-if="!submitted">
                <div class="atypon-logo">
           <!-- <img src="../assets/images/atypontube-logo.png" style="width:170px;"> -->
-      </div>
+              </div>
               <div class="title">
                   More Information
               </div>
-              <label for="file-upload" class="custom-file-upload">
-                    <i class="fa fa-cloud-upload"></i>Upload Business Case PDF
-            </label>
-              <label for="file-upload" class="custom-file-upload">
-                    <i class="fa fa-cloud-upload"></i>Upload Documents PDF
-            </label>
+              <div class="textbox">
+                  <input type="text" placeholder="Project Name" v-model="projectName">
+              </div>
+              <div class="textbox">
+                  <input type="text" placeholder="Project Description" v-model="projectDescription">
+              </div>
             <div class="textbox">
                   <input type="text" placeholder="Estimated Loan Cost" >
               </div>
               <div class="textbox">
                   <input type="text" placeholder="Bank Preferences" >
               </div>
+              <label for="file-upload" class="custom-file-upload">
+                    <i class="fa fa-cloud-upload"></i>Upload Business Case PDF
+            </label>
             <input id="file-upload" type="file"/>
               <div class="spinner-container" v-if="isLoading">
                  <div class="spinner-border text-blue" role="status"/>
                  </div>
               <div class="button" align="center" v-else>
                   <input type="button" value="PREVIOUS" @click="previousIndex">
-                  <input type="button" value="NEXT"  @click="nextIndex">
+                  <input type="button" value="SUBMIT"  @click="submit">
               </div>
                <div class="error" v-if="!isValid">
                   Please Enter A Valid Data
               </div>
+          </div>
+          <div class="login-box submit-box"  v-if="submitted">
+            <div>
+                <p class="submitting-text"> Your Proposal Has Been Submitted </p>
+            </div>
           </div>
       </div>
   </template>
   
   <script>
   import { mapActions } from 'vuex'
+  import router from '@/router'
+  import axios from 'axios';
+  import { mapGetters } from 'vuex'
   export default {
       data(){
           return{
               isLoading:false,
                isValid:true,
-          }
+               submitted:false,
+               projectName:"",
+               projectDescription:""
+            }
       },
- 
+      computed: {
+    ...mapGetters([
+      'getToken',
+    ])
+  },
     methods:{
         ...mapActions([
         'nextIndex',
         'previousIndex'
         ]),
-      
+        submit(){
+            var projectRequest={
+                name:this.projectName,
+                description:this.projectDescription,
+                bankId:localStorage.getItem("bankId"),
+                bankName:localStorage.getItem("bankName"),
+            }
+            console.log("Bearer "+this.getToken.accessToken)
+            axios.post("https://8239-109-237-193-34.eu.ngrok.io/project",projectRequest,{
+            headers:{
+                "ngrok-skip-browser-warning":'',
+                "Authorization":"Bearer "+this.getToken.accessToken
+            }});
+            this.submitted=true;
+            setTimeout(()=>router.push("/"), 3000);
+        }
       }
   }
   </script>
@@ -90,8 +123,19 @@
       padding: 15px;
       z-index: 1;
   }
+  .submitting-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    font-weight: 700;
+  }
+  .submit-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .login-box {
       width: 800px;
+      height: 500px;
       position: absolute;
       top: 50%;
       left: 50%;
