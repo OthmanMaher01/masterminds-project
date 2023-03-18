@@ -35,6 +35,11 @@ const routes = [
     path: '/loan',
     name: 'loan',
     component: () => import("../views/loan/LoanPage.vue")
+   },
+   {
+    path: '/profile',
+    name: 'profile',
+    component: () => import("../views/ProfilePage.vue")
    }
   // {
   //   path: '/about',

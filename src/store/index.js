@@ -87,6 +87,11 @@ export default createStore({
       context.commit("setToken",null);
       router.push({name:'home'});  
 
+  },
+  toProfile(){
+
+    router.push({name:'profile'});  
+
   }
   },
   modules: {
