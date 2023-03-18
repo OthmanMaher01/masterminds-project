@@ -37,8 +37,7 @@ export default {
         'nextIndex',
         'previousIndex'
         ]),
-      
-      }
+  }
 }
 </script>
 
