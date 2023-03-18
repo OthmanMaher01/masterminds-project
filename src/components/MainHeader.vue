@@ -1,4 +1,6 @@
 <template>
+<!-- :o|khG1qZ+ -->
+
  <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 

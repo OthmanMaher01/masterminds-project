@@ -83,7 +83,7 @@
                 "Authorization":"Bearer "+this.getToken.accessToken
             }});
             this.submitted=true;
-            setTimeout(()=>router.push("/"), 1500);
+            setTimeout(()=>router.push("/profile"), 1500);
         }
       }
   }
