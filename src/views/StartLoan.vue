@@ -9,8 +9,10 @@
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
                                     <h1 class="display-3 mb-4 animated slideInDown">Let's get started and find the perfect loan for you</h1>
+                                    <!-- HAMZA NOTICE ME SENPAI -->
                                     <div class="d-flex justify-content-evenly">
                                     <router-link to="/loan" class="btn btn-primary py-3 px-5 animated slideInDown " >Start</router-link>
+                                    <router-link to="/loan" class="btn btn-outline-primary py-3 px-5 animated slideInDown " >Start</router-link>
 
                                
                                     </div>
