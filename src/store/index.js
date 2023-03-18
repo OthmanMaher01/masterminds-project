@@ -49,6 +49,9 @@ export default createStore({
     }
   },
   actions: {
+    resetIndex({commit}){
+      commit("setLoanComponentIndex",1);
+    },
     setIsBanker({commit},isBanker){
       commit("setIsBanker",isBanker);
     },

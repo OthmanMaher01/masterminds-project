@@ -32,7 +32,7 @@
                  <div class="spinner-border text-blue" role="status"/>
                  </div>
               <div class="button" align="center" v-else>
-                  <input type="button" value="PREVIOUS" @click="previousIndex">
+                  <!-- <input type="button" value="PREVIOUS" @click="previousIndex"> -->
                   <input type="button" value="NEXT"  @click="nextIndex">
               </div>
                <div class="error" v-if="!isValid">

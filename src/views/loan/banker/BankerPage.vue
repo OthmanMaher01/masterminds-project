@@ -10,10 +10,10 @@
                   Banking Information
               </div>
               <div class="textbox">
-                  <input type="text" placeholder="Bank Name" >
+                  <input type="text" placeholder="Bank Name" v-model="bankName">
               </div>
               <div class="textbox">
-                  <input type="text" placeholder="Account number" >
+                  <input type="text" placeholder="Account number" v-model="bankId">
               </div>
               <div class="textbox">
                   <input type="text" placeholder="Credit Card if any" >
@@ -23,7 +23,7 @@
                  <div class="spinner-border text-blue" role="status"/>
                  </div>
               <div class="button" align="center" v-else>
-                  <input type="button" value="PREVIOUS" @click="previousIndex">
+                  <!-- <input type="button" value="PREVIOUS" @click="previousIndex"> -->
                   <input type="button" value="NEXT"  @click="nextIndex">
               </div>
                <div class="error" v-if="!isValid">
@@ -39,6 +39,8 @@
           return{
               isLoading:false,
                isValid:true,
+               bankName:"",
+               bankId:""
           }
       },
  
@@ -47,7 +49,11 @@
         'nextIndex',
         'previousIndex'
         ]),
-      
+        nextPage(){
+            localStorage.setItem("bankName",this.bankName)
+            localStorage.setItem("bankId",this.bankId)
+            this.nextIndex();
+        }
       }
   }
   </script>
